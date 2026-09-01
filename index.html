@@ -19,37 +19,22 @@
 <!-- FIRST PAGE: Choose language only once -->
 <div id="startLanguageChooser" class="start-language-chooser">
     <div class="language-choice-box">
-
         <div class="language-icon">🌐</div>
-
         <h1>Choose Your Language</h1>
-
         <p>మీ భాషను ఎంచుకోండి</p>
-
-        <button
-            class="language-choice-btn"
-            onclick="selectStartLanguage('en')">
-            English
-        </button>
-
-        <button
-            class="language-choice-btn telugu-choice"
-            onclick="selectStartLanguage('te')">
-            తెలుగు
-        </button>
-
+        <button class="language-choice-btn" onclick="selectStartLanguage('en')">English</button>
+        <button class="language-choice-btn telugu-choice" onclick="selectStartLanguage('te')">తెలుగు</button>
     </div>
 </div>
-<div id="mainAppContent" >
+
+<div id="mainAppContent" class="app-hidden-until-language">
 <div class="container">
 
     <!-- Logged in owner name -->
     <h1 id="welcomeText">Hi 👋</h1>
 
     <!-- Finance Software -->
-    <h2 class="software-title">
-    Finance Software
-</h2>
+    <h2 class="software-title" data-i18n="financeSoftware">Finance Software</h2>
 
     
 
