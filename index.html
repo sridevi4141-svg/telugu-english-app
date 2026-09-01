@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Finance Software</title>
+
+    <link rel="stylesheet" href="style.css">
+
+    <link rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+</head>
+
+<body>
+
+
+<!-- FIRST PAGE: Choose language only once -->
+<div id="startLanguageChooser" class="start-language-chooser">
+    <div class="language-choice-box">
+
+        <div class="language-icon">🌐</div>
+
+        <h1>Choose Your Language</h1>
+
+        <p>మీ భాషను ఎంచుకోండి</p>
+
+        <button
+            class="language-choice-btn"
+            onclick="selectStartLanguage('en')">
+            English
+        </button>
+
+        <button
+            class="language-choice-btn telugu-choice"
+            onclick="selectStartLanguage('te')">
+            తెలుగు
+        </button>
+
+    </div>
+</div>
+<div id="mainAppContent" >
+<div class="container">
+
+    <!-- Logged in owner name -->
+    <h1 id="welcomeText">Hi 👋</h1>
+
+    <!-- Finance Software -->
+    <h2 class="software-title">
+    Finance Software
+</h2>
+
+    
+
+    <!-- Create Account -->
+    <button class="create-account-btn"
+            onclick="createAccount()">
+        <span data-i18n="createAccount">📝 Create Account</span>
+    </button>
+
+    <div class="cards">
+
+        <!-- Owner -->
+        <div class="card" onclick="ownerLogin()">
+
+            <i class="fa-solid fa-user-tie"></i>
+
+            <h2 data-i18n="owner">Owner</h2>
+
+        </div>
+
+
+        <!-- Staff -->
+        <div class="card" onclick="staffLogin()">
+
+            <i class="fa-solid fa-users"></i>
+
+            <h2 data-i18n="staff">Staff</h2>
+
+        </div>
+
+    </div>
+
+    
+
+</div>
+
+</div>
+
+<script src="language.js"></script>
+<script>
+window.addEventListener("DOMContentLoaded", () => {
+    const savedLanguage = localStorage.getItem("financeLanguage");
+    const chooser = document.getElementById("startLanguageChooser");
+    const app = document.getElementById("mainAppContent");
+    if (savedLanguage) {
+        chooser?.classList.add("hidden-language-chooser");
+        app?.classList.remove("app-hidden-until-language");
+    }
+});
+</script>
+<script type="module" src="script.js"></script>
+<script type="module" src="notification.js"></script>
+
+
+</body>
+
+</html>
